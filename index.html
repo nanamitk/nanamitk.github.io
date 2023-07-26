@@ -73,6 +73,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-usinggpu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/26/usinggpu/" class="article-date">
+  <time class="dt-published" datetime="2023-07-26T09:03:20.000Z" itemprop="datePublished">2023-07-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/07/26/usinggpu/">VMware使用指定显卡</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="1-通过vmwarelog-日志文件查看可用显卡"><a href="#1-通过vmwarelog-日志文件查看可用显卡" class="headerlink" title="1. 通过vmwarelog 日志文件查看可用显卡"></a>1. 通过vmwarelog 日志文件查看可用显卡</h3><p>打开虚拟机目录下的<code>vmware.log</code>日志文件, 找到自己的显卡位置<br>Enumperting是在遍历所有可用显卡， 后面的vendor， 指示显卡代号， 这里是0x10de<br>adapter 显卡名称　说明他使用了显卡　<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=NVIDIA&spm=1001.2101.3001.7020">NVIDIA</a> GeForce RTX4060</p>
+<p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230726171042049.png" alt="image-20230726171042049"></p>
+<h3 id="2-修改-vmx文件切换可用显卡"><a href="#2-修改-vmx文件切换可用显卡" class="headerlink" title="2. 修改 vmx文件切换可用显卡"></a>2. 修改 vmx文件切换可用显卡</h3><p>打开虚拟机目录下的.vmx文件<br>添加：<code>mks.dx12.vendorID = &quot;0x10de&quot;</code>行</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/26/usinggpu/" data-id="clkjicpo400026g24dl8956cw" data-title="VMware使用指定显卡" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-hexo-cmd" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/07/24/hexo-cmd/" class="article-date">
@@ -104,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/24/hexo-cmd/" data-id="clkgq4pqw0003os246pfgcsew" data-title="hexo常用指令" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2023/07/24/hexo-cmd/" data-id="clkjicpo700066g24hdj5eo4k" data-title="hexo常用指令" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -147,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/24/adlearn-1/" data-id="clkgq4pqs0000os2458bgedgn" data-title="Altium designer快捷键" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2023/07/24/adlearn-1/" data-id="clkjicpnz00006g24554t9j0h" data-title="Altium designer快捷键" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -186,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/19/cliongdbtest/" data-id="clkgq4pqv0001os24dgli4eu9" data-title="clion嵌入式开发" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2023/07/19/cliongdbtest/" data-id="clkjicpo300016g24hdur6fb0" data-title="clion嵌入式开发" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -229,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/17/blog1/" data-id="clkgq4pqw0002os242ax528sf" data-title="linux搭建C语言基本编译环境" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2023/07/17/blog1/" data-id="clkjicpo400036g24d0ghd9p5" data-title="linux搭建C语言基本编译环境" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -286,6 +327,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/07/26/usinggpu/">VMware使用指定显卡</a>
+          </li>
         
           <li>
             <a href="/2023/07/24/hexo-cmd/">hexo常用指令</a>
