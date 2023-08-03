@@ -73,6 +73,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-clion-qt" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/03/clion-qt/" class="article-date">
+  <time class="dt-published" datetime="2023-08-03T07:45:48.000Z" itemprop="datePublished">2023-08-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/08/03/clion-qt/">clion与qt联动</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Qt创建工程"><a href="#1-Qt创建工程" class="headerlink" title="1 Qt创建工程"></a>1 Qt创建工程</h1><p>略</p>
+<h1 id="2-clion配置"><a href="#2-clion配置" class="headerlink" title="2 clion配置"></a>2 clion配置</h1><h2 id="2-1-工具链配置"><a href="#2-1-工具链配置" class="headerlink" title="2.1 工具链配置"></a>2.1 工具链配置</h2><p>​	创建一个新工具链，选择与创建的工程相对应版本的工具集。</p>
+<p><img src="/../images/clionqt1.png" alt="1"></p>
+<h2 id="2-2-cmake配置"><a href="#2-2-cmake配置" class="headerlink" title="2.2 cmake配置"></a>2.2 cmake配置</h2><p>​	1.点击cmake，工具链选择刚刚创建的工具链。</p>
+<p>​	2.cmake下面环境写入CMAKE_PREFIX_PATH&#x3D;D:\Applications\qt\5.15.2\mingw81_64，等号后面的是qt使用的版本的工具的位置.</p>
+<p><img src="/../images/clionqt2.png" alt="2"></p>
+<h2 id="2-3-调整运行配置"><a href="#2-3-调整运行配置" class="headerlink" title="2.3 调整运行配置"></a>2.3 调整运行配置</h2><p>​	选择cmake运行程序，在环境变量中写入PATH&#x3D;D:\Applications\qt\5.15.2\mingw81_64\bin，等号后面的是qt使用的版本的工具的位置。</p>
+<p><img src="/../images/clionqt3.png" alt="3"></p>
+<p>完成。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/08/03/clion-qt/" data-id="clkuvzu0r00072024gtes2dqa" data-title="clion与qt联动" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-usinggpu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/07/26/usinggpu/" class="article-date">
@@ -96,13 +143,13 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h3 id="1-通过vmwarelog-日志文件查看可用显卡"><a href="#1-通过vmwarelog-日志文件查看可用显卡" class="headerlink" title="1. 通过vmwarelog 日志文件查看可用显卡"></a>1. 通过vmwarelog 日志文件查看可用显卡</h3><p>打开虚拟机目录下的<code>vmware.log</code>日志文件, 找到自己的显卡位置<br>Enumperting是在遍历所有可用显卡， 后面的vendor， 指示显卡代号， 这里是0x10de<br>adapter 显卡名称　说明他使用了显卡　<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=NVIDIA&spm=1001.2101.3001.7020">NVIDIA</a> GeForce RTX4060</p>
-<p><img src="E:\myblogs\source_posts\image-20230726171042049.png" alt="image-20230726171042049"></p>
+<p><img src="/../images/usinggpu1.png" alt="1"></p>
 <h3 id="2-修改-vmx文件切换可用显卡"><a href="#2-修改-vmx文件切换可用显卡" class="headerlink" title="2. 修改 vmx文件切换可用显卡"></a>2. 修改 vmx文件切换可用显卡</h3><p>打开虚拟机目录下的.vmx文件<br>添加：<code>mks.dx12.vendorID = &quot;0x10de&quot;</code>行</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/26/usinggpu/" data-id="clknfyagk000664249dx806t1" data-title="VMware使用指定显卡" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2023/07/26/usinggpu/" data-id="clkuvzu0o00032024fwlv4rrh" data-title="VMware使用指定显卡" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -145,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/24/hexo-cmd/" data-id="clknfyagk000564243l2hc64w" data-title="hexo常用指令" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2023/07/24/hexo-cmd/" data-id="clkuvzu0r000620242fy6bcsc" data-title="hexo常用指令" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -188,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/24/adlearn-1/" data-id="clknfyagd0000642405cahhc8" data-title="Altium designer快捷键" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2023/07/24/adlearn-1/" data-id="clkuvzu0j00002024dm7obxvf" data-title="Altium designer快捷键" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -227,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/19/cliongdbtest/" data-id="clknfyagk00046424bhf3eb6s" data-title="clion嵌入式开发" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2023/07/19/cliongdbtest/" data-id="clkuvzu0m000120243ptjbqrn" data-title="clion嵌入式开发" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -270,7 +317,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/17/blog1/" data-id="clknfyagg00016424e10ncil7" data-title="linux搭建C语言基本编译环境" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2023/07/17/blog1/" data-id="clkuvzu0n000220241ea0cwu6" data-title="linux搭建C语言基本编译环境" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -316,7 +363,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
     </div>
   </div>
 
@@ -327,6 +374,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/08/03/clion-qt/">clion与qt联动</a>
+          </li>
         
           <li>
             <a href="/2023/07/26/usinggpu/">VMware使用指定显卡</a>
@@ -342,10 +393,6 @@
         
           <li>
             <a href="/2023/07/19/cliongdbtest/">clion嵌入式开发</a>
-          </li>
-        
-          <li>
-            <a href="/2023/07/17/blog1/">linux搭建C语言基本编译环境</a>
           </li>
         
       </ul>
