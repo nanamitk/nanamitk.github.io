@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>leetcode学习笔记 | 芝士瑞希的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1.两数之和1.1 map1.1.1 map定义​	map是一种key value的存储结构，可以用key保存数值，用value在保存数值所在的下表。 C++中map，有三种类型：    映射 底层实现 是否有序 数值是否可以重复 能否更改数值 查询效率 增删效率    std::map 红黑树 key有序 key不可重复 key不可修改 O(logn) O(logn)   std::multim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode学习笔记">
+<meta property="og:url" content="http://example.com/2023/11/03/leetcode/index.html">
+<meta property="og:site_name" content="芝士瑞希的博客">
+<meta property="og:description" content="1.两数之和1.1 map1.1.1 map定义​	map是一种key value的存储结构，可以用key保存数值，用value在保存数值所在的下表。 C++中map，有三种类型：    映射 底层实现 是否有序 数值是否可以重复 能否更改数值 查询效率 增删效率    std::map 红黑树 key有序 key不可重复 key不可修改 O(logn) O(logn)   std::multim">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-11-03T02:13:42.000Z">
+<meta property="article:modified_time" content="2023-11-03T07:07:44.998Z">
+<meta property="article:author" content="amiya mzk">
+<meta property="article:tag" content="学习">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="芝士瑞希的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">芝士瑞希的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-leetcode" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/03/leetcode/" class="article-date">
+  <time class="dt-published" datetime="2023-11-03T02:13:42.000Z" itemprop="datePublished">2023-11-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      leetcode学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="1-两数之和"><a href="#1-两数之和" class="headerlink" title="1.两数之和"></a>1.两数之和</h1><h2 id="1-1-map"><a href="#1-1-map" class="headerlink" title="1.1 map"></a>1.1 map</h2><h3 id="1-1-1-map定义"><a href="#1-1-1-map定义" class="headerlink" title="1.1.1 map定义"></a>1.1.1 map定义</h3><p>​	map是一种key value的存储结构，可以用key保存数值，用value在保存数值所在的下表。</p>
+<p>C++中map，有三种类型：</p>
+<table>
+<thead>
+<tr>
+<th>映射</th>
+<th>底层实现</th>
+<th>是否有序</th>
+<th>数值是否可以重复</th>
+<th>能否更改数值</th>
+<th>查询效率</th>
+<th>增删效率</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>std::map</td>
+<td>红黑树</td>
+<td>key有序</td>
+<td>key不可重复</td>
+<td>key不可修改</td>
+<td>O(logn)</td>
+<td>O(logn)</td>
+</tr>
+<tr>
+<td>std::multimap</td>
+<td>红黑树</td>
+<td>key有序</td>
+<td>key可重复</td>
+<td>key不可修改</td>
+<td>O(logn)</td>
+<td>O(logn)</td>
+</tr>
+<tr>
+<td>std::unordered_map</td>
+<td>红黑树</td>
+<td>key无序</td>
+<td>key不可重复</td>
+<td>key不可修改</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+</tbody></table>
+<p>std::unordered_map 底层实现为哈希表，std::map 和std::multimap 的底层实现是红黑树。</p>
+<h3 id="1-1-2-map的用法"><a href="#1-1-2-map的用法" class="headerlink" title="1.1.2  map的用法"></a>1.1.2  map的用法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">map&lt;<span class="type">int</span>, string&gt;s;<span class="comment">//定义 </span></span><br><span class="line">map&lt;vector&lt;<span class="type">int</span>&gt;, <span class="type">int</span>&gt;h;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line">cin &gt;&gt; n;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= n; i++)</span><br><span class="line">&#123;</span><br><span class="line">	string a;</span><br><span class="line">	cin &gt;&gt; a;</span><br><span class="line">	s.<span class="built_in">insert</span>(&#123; i,a &#125;);<span class="comment">//元素的插入两种方法	</span></span><br><span class="line">	<span class="comment">//s[i]=a; s[i]输入能够实现元素覆盖 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//遍历 </span></span><br><span class="line">	<span class="comment">// 方式一、range for C++ 11版本及以上</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span>&amp; v : s)</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; v.first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; v.second &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">	<span class="comment">//方式二、迭代器</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> v = s.<span class="built_in">begin</span>(); v != s.<span class="built_in">end</span>(); v++)</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; v-&gt;first &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; v-&gt;second &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//map里面是否含有这个元素 </span></span><br><span class="line"><span class="keyword">if</span> (s.<span class="built_in">find</span>(<span class="number">1</span>) != s.<span class="built_in">end</span>())</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; s[<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其他用法</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">begin</span>() 返回指向map头部的迭代器</span><br><span class="line"><span class="built_in">clear</span>() 删除所有元素</span><br><span class="line"><span class="built_in">count</span>() 返回指定元素出现的次数</span><br><span class="line"><span class="built_in">empty</span>() 如果map为空则返回<span class="function"><span class="literal">true</span></span></span><br><span class="line"><span class="function"><span class="title">end</span><span class="params">()</span>   返回指向map末尾的迭代器</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">equal_range</span><span class="params">()</span>    返回特殊条目的迭代器对</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">erase</span><span class="params">()</span> 删除一个元素</span></span><br><span class="line"><span class="function"><span class="title">find</span><span class="params">()</span>  查找一个元素</span></span><br><span class="line"><span class="function"><span class="title">insert</span><span class="params">()</span>插入元素</span></span><br><span class="line"><span class="function"><span class="title">max_size</span><span class="params">()</span>返回可以容纳的最大元素个数</span></span><br><span class="line"><span class="function"><span class="title">size</span><span class="params">()</span>  返回map中元素的个数</span></span><br><span class="line"><span class="function"><span class="title">swap</span><span class="params">()</span>  交换两个map</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">  <span class="title">get_allocator</span><span class="params">()</span>  返回map的配置器</span></span><br><span class="line"><span class="function">  <span class="title">key_comp</span><span class="params">()</span>       返回比较元素key的函数</span></span><br><span class="line"><span class="function">  <span class="title">lower_bound</span><span class="params">()</span>    返回键值&gt;</span>=给定元素的第一个位置</span><br><span class="line">  <span class="built_in">max_size</span>()       返回可以容纳的最大元素个数</span><br><span class="line">  <span class="built_in">rbegin</span>()         返回一个指向map尾部的逆向迭代器</span><br><span class="line">  <span class="built_in">rend</span>()           返回一个指向map头部的逆向迭代器</span><br><span class="line">  <span class="built_in">upper_bound</span>()     返回键值&gt;给定元素的第一个位置</span><br><span class="line">  <span class="built_in">value_comp</span>()      返回比较元素value的函数</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-题解"><a href="#1-2-题解" class="headerlink" title="1.2 题解"></a>1.2 题解</h2><p>c++解法</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        std::unordered_map &lt;<span class="type">int</span>,<span class="type">int</span>&gt; map;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="comment">// 遍历当前元素，并在map中寻找是否有匹配的key</span></span><br><span class="line">            <span class="keyword">auto</span> iter = map.<span class="built_in">find</span>(target - nums[i]); </span><br><span class="line">            <span class="keyword">if</span>(iter != map.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;iter-&gt;second, i&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 如果没找到匹配对，就把访问过的元素和下标加入到map中</span></span><br><span class="line">            map.<span class="built_in">insert</span>(<span class="built_in">pair</span>&lt;<span class="type">int</span>, <span class="type">int</span>&gt;(nums[i], i)); </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>python解法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        records = <span class="built_in">dict</span>()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 用枚举更方便，就不需要通过索引再去取当前位置的值</span></span><br><span class="line">        <span class="keyword">for</span> idx, val <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            <span class="keyword">if</span> target - val <span class="keyword">not</span> <span class="keyword">in</span> records:</span><br><span class="line">                records[val] = idx</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> [records[target - val], idx] <span class="comment"># 如果存在就返回字典记录索引和当前索引</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/11/03/leetcode/" data-id="cloi9y05y00072w24ai0p73ez" data-title="leetcode学习笔记" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/08/22/qt-downlaod/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">qt-downlaod</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/lock1/" rel="tag">lock1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/lock1/" style="font-size: 10px;">lock1</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/03/leetcode/">leetcode学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/22/qt-downlaod/">qt-downlaod</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/09/stm32-printf-retarget/">stm32中printf重定向</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/03/clion-qt/">clion与qt联动</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/26/usinggpu/">VMware使用指定显卡</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 amiya mzk<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
